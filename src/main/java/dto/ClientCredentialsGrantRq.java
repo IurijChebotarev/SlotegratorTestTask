@@ -15,4 +15,10 @@ public class ClientCredentialsGrantRq{
 
 	@JsonProperty("scope")
 	private String scope;
+
+	@JsonProperty("password")
+	private String password;
+
+	@JsonProperty("username")
+	private String username;
 }
