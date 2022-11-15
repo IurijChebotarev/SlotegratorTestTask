@@ -13,7 +13,7 @@
         <selenium.java.version>3.141.59</selenium.java.version>
         <junit.version>5.8.1</junit.version>
 
-        <browser.name>chrome</browser.name>
+        <api.url>http://test-api.d6.dev.devcaz.com/</api.url>
         <test.project.language>RU</test.project.language>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -85,6 +85,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <api.url>${api.url}</api.url>
+                        <test.project.language>${test.project.language}</test.project.language>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

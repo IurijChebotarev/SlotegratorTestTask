@@ -11,7 +11,7 @@ import lombok.Data;
 public class ClientCredentialsGrantRq{
 
 	@JsonProperty("grant_type")
-	private String grantType;
+	private String granttype;
 
 	@JsonProperty("scope")
 	private String scope;
