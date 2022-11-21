@@ -10,10 +10,8 @@ import glue.ApiSteps;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("API")
 public class ApiTests extends ApiBaseStep {
 
   static ValidatableResponse response;

@@ -14,4 +14,3 @@ public enum BasicAuthenticationUsernames {
     return userName;
   }
 }
-

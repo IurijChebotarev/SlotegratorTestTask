@@ -13,9 +13,8 @@ import io.restassured.specification.RequestSpecification;
 import java.util.Locale;
 
 public class RestApi {
-  private final String BASE_URL = System.getProperty("api.url").toLowerCase(Locale.ROOT);
-
   private static RequestSpecification rspec;
+  private final String BASE_URL = System.getProperty("api.url").toLowerCase(Locale.ROOT);
 
   public RestApi() {
     rspec = io.restassured.RestAssured.given()

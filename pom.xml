@@ -14,14 +14,36 @@
         <junit.version>5.8.1</junit.version>
 
         <api.url>http://test-api.d6.dev.devcaz.com/</api.url>
+        <ui.url>http://test-app.d6.dev.devcaz.com/admin/login</ui.url>
         <test.project.language>RU</test.project.language>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-    </properties>
 
+        <webdriver.timeouts.implicitlywait>5000</webdriver.timeouts.implicitlywait>
+
+        <browser>chrome</browser>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-bom</artifactId>
+                <version>7.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.8.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -34,15 +56,15 @@
             <version>${selenium.java.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>junit-bom</artifactId>
-            <version>5.8.1</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>1.8.2</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -77,8 +99,29 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.13.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-console</artifactId>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -88,7 +131,11 @@
                 <configuration>
                     <systemPropertyVariables>
                         <api.url>${api.url}</api.url>
+                        <ui.url>${ui.url}</ui.url>
                         <test.project.language>${test.project.language}</test.project.language>
+                        <webdriver.timeouts.implicitlywait>${webdriver.timeouts.implicitlywait}
+                        </webdriver.timeouts.implicitlywait>
+                        <browser>${browser}</browser>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -104,5 +151,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -1,8 +1,8 @@
 package enums;
 
 public enum ClientCredentials {
-  GUEST("client_credentials","guest:default","",""),
-  PLAYER("password","","userName","password");
+  GUEST("client_credentials", "guest:default", "", ""),
+  PLAYER("password", "", "userName", "password");
 
 
   private String grantType;
@@ -21,9 +21,16 @@ public enum ClientCredentials {
   public String getGrantType() {
     return grantType;
   }
+
   public String getscope() {
     return scope;
   }
-  public String getUserName() { return userName; }
-  public String getPassword() { return password; }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public String getPassword() {
+    return password;
+  }
 }

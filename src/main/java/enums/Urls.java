@@ -1,12 +1,11 @@
 package enums;
 
-public enum UrlSuffixes {
-  TOKEN("/v2/oauth2/token"),
-  PLAYERS("/v2/players");
+public enum Urls {
+  UI("http://test-app.d6.dev.devcaz.com/admin/login");
 
   private String name;
 
-  UrlSuffixes(String name) {
+  Urls(String name) {
     this.name = name;
 
   }

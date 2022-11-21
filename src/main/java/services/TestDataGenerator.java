@@ -1,6 +1,7 @@
 package services;
 
 import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.Base64;
 
 public class TestDataGenerator {
@@ -13,11 +14,11 @@ public class TestDataGenerator {
     return RandomStringUtils.randomAlphanumeric(6);
   }
 
-  public String generateTestName(String prefix){
+  public String generateTestName(String prefix) {
     return prefix + generateLettersString();
   }
 
-  public String generateEncodedPassword(){
+  public String generateEncodedPassword() {
     return Base64.getEncoder().encodeToString(generateAlphanumericString().getBytes());
   }
 }

@@ -1,12 +1,11 @@
 package enums;
 
-public enum UrlSuffixes {
-  TOKEN("/v2/oauth2/token"),
-  PLAYERS("/v2/players");
+public enum Browsers {
+  CHROME("chrome");
 
   private String name;
 
-  UrlSuffixes(String name) {
+  Browsers(String name) {
     this.name = name;
 
   }
